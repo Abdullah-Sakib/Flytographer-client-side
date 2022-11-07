@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRight} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const HomeServices = () => {
   return (
@@ -44,7 +45,7 @@ const HomeServices = () => {
           </div>
         </div>
       </div>
-      <button className="btn btn-warning my-10 text-white">SEE ALL <FaArrowRight className="ml-2"></FaArrowRight> </button>
+      <Link to='/services'><button className="btn btn-warning my-10 text-white">SEE ALL <FaArrowRight className="ml-2"></FaArrowRight> </button></Link>
     </div>
   );
 };
