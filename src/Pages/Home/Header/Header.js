@@ -28,10 +28,10 @@ const Header = () => {
               <rect x="14" y="11" width="7" height="12" />
             </svg>
             <span class="ml-2 text-xl font-bold tracking-wide text-black uppercase">
-              Company
+              Flytographer
             </span>
           </a>
-          <ul class="flex items-center hidden space-x-8 lg:flex">
+          <ul class=" items-center hidden space-x-8 lg:flex">
             <li>
               <a
                 href="/"
@@ -132,7 +132,7 @@ const Header = () => {
                           <rect x="14" y="11" width="7" height="12" />
                         </svg>
                         <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                          Company
+                          Flytographer
                         </span>
                       </a>
                     </div>
