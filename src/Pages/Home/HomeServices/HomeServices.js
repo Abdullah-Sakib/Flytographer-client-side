@@ -1,58 +1,32 @@
-import React, { useEffect } from "react";
-import { FaArrowRight} from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import HomeServiceCart from "./HomeServiceCart";
 
 const HomeServices = () => {
-  useEffect(()=>{
-    fetch('http://localhost:5000/services?dataLimit=3')
-    .then(res => res.json())
-    .then(data => console.log(data))
-  },[])
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/services?dataLimit=3")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
   return (
     <div>
-      <h2 className="text-3xl text-start ml-8 mb-7 mt-16 font-semibold">Photography services from Flytographer</h2>
+      <h2 className="text-3xl text-start ml-8 mb-7 mt-16 font-semibold">
+        Photography services from Flytographer
+      </h2>
       <div className="grid grid-cols-3 ">
-        <div className="card w-96 glass mx-auto">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="car!" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Graduation</h2>
-            <p className="text-start">Capture the best moments from your graduation with flytographer</p>
-            <p className="text-start">$129</p>
-            <div className="card-actions justify-end">
-              <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
-            </div>
-          </div>
-        </div>
-        <div className="card w-96 glass mx-auto">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="car!" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Graduation</h2>
-            <p className="text-start">Capture the best moments from your graduation with flytographer</p>
-            <p className="text-start">$129</p>
-            <div className="card-actions justify-end">
-              <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
-            </div>
-          </div>
-        </div>
-        <div className="card w-96 glass mx-auto">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="car!" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Graduation</h2>
-            <p className="text-start">Capture the best moments from your graduation with flytographer</p>
-            <p className="text-start">$129</p>
-            <div className="card-actions justify-end">
-              <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
-            </div>
-          </div>
-        </div>
+
+        {
+          services.map(service => <HomeServiceCart key={service._id} service={service}></HomeServiceCart>)
+        }
+
       </div>
-      <Link to='/services'><button className="btn btn-warning my-10 text-white">SEE ALL <FaArrowRight className="ml-2"></FaArrowRight> </button></Link>
+      <Link to="/services">
+        <button className="btn btn-warning my-10 text-white">
+          SEE ALL <FaArrowRight className="ml-2"></FaArrowRight>{" "}
+        </button>
+      </Link>
     </div>
   );
 };

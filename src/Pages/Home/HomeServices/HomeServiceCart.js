@@ -1,17 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const HomeServiceCart = () => {
+const HomeServiceCart = ({service}) => {
+  console.log(service);
+  const {image, price, description, _id, name} = service;
   return (
     <div>
        <div className="card w-96 glass mx-auto">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="car!" />
+          <figure className='h-60'>
+            <img src={image} className="h-full w-full" alt="car!" />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">Graduation</h2>
-            <p className="text-start">Capture the best moments from your graduation with flytographer</p>
-            <p className="text-start">$129</p>
+            <h2 className="card-title">{name}</h2>
+            <p className="text-start">{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
+            <p className="text-start">${price}</p>
             <div className="card-actions justify-end">
               <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
             </div>
