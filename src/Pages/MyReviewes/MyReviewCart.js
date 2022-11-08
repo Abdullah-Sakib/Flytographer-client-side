@@ -1,11 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const MyReviewCart = ({ reviews, handleReviewDelete  }) => {
+const MyReviewCart = ({ reviews, handleReviewDelete }) => {
   const { review, userImage, userName, _id } = reviews;
-  
-  const handleReviewUpdate = () => {
 
-  }
   return (
     <div className="grid grid-cols-12 my-5 border shadow-lg w-11/12 md:w-4/5 mx-auto rounded-lg py-4 md:p-8">
       <div className="col-span-3 ">
@@ -21,8 +19,15 @@ const MyReviewCart = ({ reviews, handleReviewDelete  }) => {
       </div>
 
       <div className="col-span-3 text-start flex items-center justify-evenly">
-        <button onClick={()=>handleReviewDelete(_id)} className="btn btn-error text-white">Delete</button>
-        <button onClick={handleReviewUpdate} className="btn btn-warning text-white">Update</button>
+        <button
+          onClick={() => handleReviewDelete(_id)}
+          className="btn btn-error text-white"
+        >
+          Delete
+        </button>
+        <Link to={`/updateReview/${_id}`}>
+          <button className="btn btn-warning text-white">Update</button>
+        </Link>
       </div>
     </div>
   );

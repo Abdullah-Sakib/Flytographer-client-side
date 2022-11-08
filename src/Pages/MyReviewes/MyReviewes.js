@@ -6,6 +6,7 @@ import MyReviewCart from './MyReviewCart';
 const MyReviewes = () => {
   const {user} = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  
   useEffect(() => {
     fetch(`http://localhost:5000/userReviews?email=${user?.email}`)
     .then(res => res.json())
@@ -32,14 +33,14 @@ const MyReviewes = () => {
 
   return (
     <div>
-      {reviews.length > 0 && <h2 className='text-3xl font-semibold my-7'>My Reviews</h2>}
-      {reviews.length === 0 && 
+      {reviews?.length > 0 && <h2 className='text-3xl font-semibold my-7'>My Reviews</h2>}
+      {reviews?.length === 0 && 
         <div className='h-[78vh] flex justify-center items-center'>
           <h1 className='text-4xl font-semibold text-warning'>No reviews were added !!</h1>
         </div>
       }
       {
-        reviews.map(review => <MyReviewCart key={review._id} reviews={review} handleReviewDelete={handleReviewDelete }></MyReviewCart>)
+        reviews?.map(review => <MyReviewCart key={review._id} reviews={review} handleReviewDelete={handleReviewDelete }></MyReviewCart>)
       }
     </div>
   );
