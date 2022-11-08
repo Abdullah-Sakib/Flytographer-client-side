@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const Login = () => {
+  const {logIn, googleSignUp} = useContext(AuthContext);
   const handleLogIn = event => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    logIn(email, password)
+    .then(result => {
+      form.reset();
+      console.log(result.user);
+    })
+    .catch(error => console.error(error))
+  }
+  const handleGoogleSignIn = () => {
+    googleSignUp()
+    .then(result => {
+      console.log(result.user)
+    })
+    .catch(error => console.error(error))
   }
   return (
     <div className="hero min-h-screen">
@@ -51,7 +65,7 @@ const Login = () => {
             </div>
             <p className="text-lg font-semibold my-2">Or</p>
             <div className="form-control">
-              <button  className="btn btn-warning text-white flex"><FcGoogle className="text-3xl mr-2"></FcGoogle> <span className="flex-grow">Continue with Google</span></button>
+              <button onClick={handleGoogleSignIn} className="btn btn-warning text-white flex"><FcGoogle className="text-3xl mr-2"></FcGoogle> <span className="flex-grow">Continue with Google</span></button>
             </div>
             <Link to='/register' className="font-semibold">Don't have an account? </Link>
           </form>
