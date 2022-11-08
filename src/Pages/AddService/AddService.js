@@ -10,12 +10,18 @@ const AddService = () => {
     const image = form.image.value;
     const price = form.price.value;
     const description = form.description.value;
+    
+    const date = Date();
+    const split = date.split(' ');
+    const dateArray = [split[2], split[1], split[3], split[4]];
+    const serviceAddTime = dateArray.join(' ');
 
     const service = {
       name,
       image,
       price,
       description,
+      serviceAddTime
     };
 
     fetch(`https://flytographer-server.vercel.app/service`, {

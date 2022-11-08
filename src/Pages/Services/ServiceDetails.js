@@ -24,6 +24,7 @@ const ServiceDetails = () => {
     const userImage = user.photoURL;
     const userEmail = user.email;
     const serviceId = _id;
+    const serviceName = name;
     const date = Date();
     const split = date.split(' ');
     const dateArray = [split[2], split[1], split[3], split[4]];
@@ -34,6 +35,7 @@ const ServiceDetails = () => {
       userImage,
       userEmail,
       serviceId,
+      serviceName,
       reviewDate
     };
 
