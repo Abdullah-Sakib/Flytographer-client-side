@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="relative">
       <img
-        src="https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=995&q=80"
         className="absolute inset-0 object-cover w-full h-full "
         alt=""
       />
@@ -21,7 +21,7 @@ const Banner = () => {
         <div className="relative h-[90vh] px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex justify-center ">
             <div className="w-full max-w-lg mt-16 mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
-              <h2 className="max-w-lg mb-6 font-thin  text-3xl  tracking-tight  sm:text-4xl sm:leading-none" style={{fontFamily: 'Berkshire Swash'}}>
+              <h2 className="max-w-lg mb-6 font-thin text-warning text-3xl  tracking-tight  sm:text-4xl sm:leading-none" style={{fontFamily: 'Berkshire Swash'}}>
                 Capture every precious moment with flytographer
               </h2>
               <p className="max-w-xl mb-4  text-base text-base-100 md:text-lg" style={{fontFamily: 'Berkshire Swash'}}>

@@ -9,7 +9,7 @@ const HowItWorks = () => {
         <div className="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
           <svg
             viewBox="0 0 88 88"
-            className="w-full max-w-screen-xl text-indigo-100"
+            className="w-full max-w-screen-xl text-gray-400"
           >
             <circle fill="currentColor" cx="44" cy="44" r="15.5" />
             <circle
