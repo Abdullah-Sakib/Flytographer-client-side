@@ -1,10 +1,9 @@
 import React from "react";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import useTitle from "../../CustomHooks/useTitle";
 
-
 const AddService = () => {
-  const handleAddService = event =>{
+  const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -16,31 +15,34 @@ const AddService = () => {
       name,
       image,
       price,
-      description
-    }
-    
-    fetch(`http://localhost:5000/service`, {
+      description,
+    };
+
+    fetch(`https://flytographer-server.vercel.app/service`, {
       method: "POST",
       headers: {
-        'content-type': 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(service)
+      body: JSON.stringify(service),
     })
-    .then(res => res.json())
-    .then(data => {
-      if(data.acknowledged){
-        form.reset();
-        swal("Congratulations", "Service added successfully!", "success");
-      }
-    })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          form.reset();
+          swal("Congratulations", "Service added successfully!", "success");
+        }
+      });
+  };
 
-  useTitle('AddService')
+  useTitle("AddService");
 
   return (
     <div>
       <h2 className="text-3xl font-semibold">Add New Service</h2>
-      <form onSubmit={handleAddService} className="container mx-auto mt-10 mb-52 grid grid-cols-1 md:grid-cols-2 gap-9">
+      <form
+        onSubmit={handleAddService}
+        className="container mx-auto mt-10 px-5 mb-52 grid grid-cols-1 md:grid-cols-2 gap-9"
+      >
         <input
           type="text"
           name="name"
@@ -68,7 +70,12 @@ const AddService = () => {
           placeholder="Description"
           required
         ></textarea>
-        <button type="submit" className="btn btn-warning col-span-full text-white">Add Service</button>
+        <button
+          type="submit"
+          className="btn btn-warning col-span-full text-white"
+        >
+          Add Service
+        </button>
       </form>
     </div>
   );

@@ -12,7 +12,7 @@ const ServiceDetails = () => {
   const { image, price, description, name, _id } = service;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allReviews?service=${_id}`)
+    fetch(`https://flytographer-server.vercel.app/allReviews?service=${_id}`)
       .then((res) => res.json())
       .then((data) => setAllReviews(data));
   }, [_id]);
@@ -37,7 +37,7 @@ const ServiceDetails = () => {
       reviewDate
     };
 
-    fetch("http://localhost:5000/addReview", {
+    fetch("https://flytographer-server.vercel.app/addReview", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -111,6 +111,7 @@ const ServiceDetails = () => {
                   className="textarea textarea-bordered w-full h-40"
                   placeholder="write your review here"
                   name="review"
+                  required
                 ></textarea>
                 <button
                   type="submit"

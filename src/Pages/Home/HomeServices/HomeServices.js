@@ -6,7 +6,7 @@ import HomeServiceCart from "./HomeServiceCart";
 const HomeServices = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services?dataLimit=3")
+    fetch("https://flytographer-server.vercel.app/services?dataLimit=3")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

@@ -6,7 +6,7 @@ const Services = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://flytographer-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

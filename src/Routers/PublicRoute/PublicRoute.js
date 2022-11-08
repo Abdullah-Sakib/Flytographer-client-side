@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
       {
         path: 'serviceDetails/:id',
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/service/${params.id}`)
+        loader: ({params}) => fetch(`https://flytographer-server.vercel.app/service/${params.id}`)
       },
       {
         path: 'blogs',
@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
       {
         path: 'updateReview/:id',
         element: <UpdateReviewPage></UpdateReviewPage>,
-        loader: ({params}) => fetch(`http://localhost:5000/review/${params.id}`)
+        loader: ({params}) => fetch(`https://flytographer-server.vercel.app/review/${params.id}`)
       }
     ]
   }

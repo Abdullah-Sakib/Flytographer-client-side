@@ -9,7 +9,7 @@ const UpdateReviewPage = () => {
     event.preventDefault();
     const updatedReview = event.target.review.value;
 
-    fetch(`http://localhost:5000/updateReview/${review._id}`, {
+    fetch(`https://flytographer-server.vercel.app/updateReview/${review._id}`, {
       method: "PATCH",
       headers: {
         'Content-Type': 'application/json'
