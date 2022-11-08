@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { BsCameraFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const {user, logOut} = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleSignOut = () => {
+    logOut()
+    .then(() => {})
+    .catch(err => console.error(err));
+  }
   return (
     <div className="white ">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -30,7 +37,8 @@ const Header = () => {
                 Services
               </Link>
             </li>
-            <li>
+            {
+              user?.uid && <li>
               <Link
                 to="/myreviewes"
                 aria-label="Our product"
@@ -40,7 +48,9 @@ const Header = () => {
                 My Reviewes
               </Link>
             </li>
-            <li>
+            }
+            {
+              user?.uid && <li>
               <Link
                 to="/addservice"
                 aria-label="Product pricing"
@@ -50,7 +60,19 @@ const Header = () => {
                 Add Service
               </Link>
             </li>
-            <li>
+            }
+            {
+              user?.uid ? 
+              <button
+                onClick={handleSignOut}
+                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none"
+                aria-label="Sign up"
+                title="Sign up"
+              >
+                Sign Out
+              </button>
+              :
+              <li>
               <Link
                 to="/register"
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none"
@@ -60,6 +82,7 @@ const Header = () => {
                 Sign up
               </Link>
             </li>
+            }
           </ul>
           <div className="lg:hidden">
             <button

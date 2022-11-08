@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Registration = () => {
   const {createUser, updateUserProfile,  googleSignUp} = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleRegistration = event => {
     event.preventDefault();
     const form = event.target;
@@ -17,7 +18,7 @@ const Registration = () => {
       form.reset();
       const user = result.user;
       updateUserProfile(name, photoURL)
-      .then(() => {})
+      .then(() => {navigate('/')})
       .catch(err => console.error(err))
       console.log(user);
     })
@@ -26,7 +27,7 @@ const Registration = () => {
   const handleGoogleSignIn = () => {
     googleSignUp()
     .then(result => {
-      console.log(result.user)
+      navigate('/');
     })
     .catch(error => console.error(error))
   }
