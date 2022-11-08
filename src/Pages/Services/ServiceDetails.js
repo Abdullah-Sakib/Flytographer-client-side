@@ -1,14 +1,22 @@
-import React, { useContext } from "react";
-import { Link, useLoaderData} from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import ReviewCart from "./ReviewCart";
 
 const ServiceDetails = () => {
   const { user } = useContext(AuthContext);
+  const [allReviews, setAllReviews] = useState([]);
   const service = useLoaderData();
   const { image, price, description, name, _id } = service;
-  
-  const handleAddReview = event => {
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/allReviews?service=${_id}`)
+      .then((res) => res.json())
+      .then((data) => setAllReviews(data));
+  }, [_id]);
+
+  const handleAddReview = (event) => {
     event.preventDefault();
     const review = event.target.review.value;
     const userName = user.displayName;
@@ -16,23 +24,28 @@ const ServiceDetails = () => {
     const userEmail = user.email;
     const serviceId = _id;
     const addReview = {
-      review, userName, userImage, userEmail, serviceId
+      review,
+      userName,
+      userImage,
+      userEmail,
+      serviceId,
     };
-
-    fetch('http://localhost:5000/addReview', {
+    fetch("http://localhost:5000/addReview", {
       method: "POST",
       headers: {
-        "content-type" : "application/json"
+        "content-type": "application/json",
       },
-      body: JSON.stringify(addReview)
+      body: JSON.stringify(addReview),
     })
-    .then(res => res.json())
-    .then(data => {
-      event.target.reset();
-      swal("Congratulations", "Review added successfully!", "success");
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        event.target.reset();
+        swal("Congratulations", "Review added successfully!", "success");
+        const addNewReview = [...allReviews, addReview];
+        setAllReviews(addNewReview);
+      });
+  };
 
-  }
   return (
     <div>
       <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
@@ -66,23 +79,45 @@ const ServiceDetails = () => {
           />
         </div>
       </div>
+
+      {/* reviews section  */}
+
       <div>
         <h2 className="text-3xl font-bold my-16">Reviews</h2>
         <div className="grid grid-cols-1 md:grid-cols-12">
-          <div className="md:col-span-8 border">
-            <p>show review</p>
+          <div className="md:col-span-8 ">
+            <h2 className="text-2xl font-semibold ">All Reviews</h2>
+
+            {allReviews.map((review) => (
+              <ReviewCart key={review._id} reviews={review}></ReviewCart>
+            ))}
           </div>
-          <div className="md:col-span-4 border">
+          <div className="md:col-span-4 ">
             {user?.uid ? (
-              <form onSubmit={handleAddReview}  className="w-10/12 mx-auto ">
-                <h2 className="text-2xl font-semibold text-start mb-5">Add Review</h2>
-                <textarea className="textarea textarea-bordered w-full h-40" placeholder="write your review here" name="review"></textarea>
-                <button type="submit" className="block btn btn-warning text-white ">Add Review</button>
+              <form onSubmit={handleAddReview} className="w-10/12 mx-auto ">
+                <h2 className="text-2xl font-semibold text-start mb-5">
+                  Add Review
+                </h2>
+                <textarea
+                  className="textarea textarea-bordered w-full h-40"
+                  placeholder="write your review here"
+                  name="review"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="block btn btn-warning text-white "
+                >
+                  Add Review
+                </button>
               </form>
             ) : (
               <div>
-                <h2 className="text-3xl font-bold mb-5">Please login to add review</h2>
-                <Link to='/login'><button className="btn btn-warning text-white" >Log in</button></Link>
+                <h2 className="text-3xl font-bold mb-5">
+                  Please login to add review
+                </h2>
+                <Link to="/login">
+                  <button className="btn btn-warning text-white">Log in</button>
+                </Link>
               </div>
             )}
           </div>
