@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const MyReviewCart = ({ reviews, handleReviewDelete }) => {
-  const { review, userImage, userName, _id } = reviews;
+  const { review, userImage, userName, _id, reviewDate } = reviews;
 
   return (
     <div className="grid grid-cols-12 my-5 border shadow-lg w-11/12 md:w-4/5 mx-auto rounded-lg py-4 md:p-8">
@@ -15,6 +15,7 @@ const MyReviewCart = ({ reviews, handleReviewDelete }) => {
       </div>
       <div className="col-span-6 text-start">
         <h3 className="text-xl font-bold mb-2">{userName}</h3>
+        <p className="text-lg font-semibold mb-2">{reviewDate}</p>
         <p className="text-lg font-semibold text-gray-600">{review}</p>
       </div>
 

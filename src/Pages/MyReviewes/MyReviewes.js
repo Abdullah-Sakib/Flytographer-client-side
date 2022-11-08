@@ -1,18 +1,29 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import useTitle from '../../CustomHooks/useTitle';
 import MyReviewCart from './MyReviewCart';
 
 const MyReviewes = () => {
-  const {user} = useContext(AuthContext);
+  const {user,logOut} = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userReviews?email=${user?.email}`)
-    .then(res => res.json())
+    fetch(`http://localhost:5000/userReviews?email=${user?.email}`,{
+      headers: {
+        authorization : `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    .then(res => {
+      if(res.status === 401 || res.status === 403){
+        return navigate('/login');
+      }
+      return res.json()
+    })
     .then(data => setReviews(data))
-  },[user])
+  },[user, logOut, navigate])
 
   const handleReviewDelete = (id) => {
     const agree = window.confirm('Are you sure your want to delete this review?');

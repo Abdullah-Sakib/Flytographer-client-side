@@ -4,7 +4,7 @@ import { MdCamera } from "react-icons/md";
 const SomeShoots = () => {
   return (
     <div className=" my-28">
-      <h2 className='text-4xl text-start font-bold ml-7 mb-7 flex items-center'><MdCamera className='mr-3 text-indigo-400'></MdCamera> Some Emotions</h2>
+      <h2 className='text-4xl text-start font-bold ml-7 mb-7 flex items-center'><MdCamera className='mr-3 text-indigo-400'></MdCamera>Some Emotions</h2>
       <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
           <svg

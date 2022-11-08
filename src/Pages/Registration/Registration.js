@@ -17,11 +17,25 @@ const Registration = () => {
     createUser(email, password)
     .then(result => {
       form.reset();
-      const user = result.user;
       updateUserProfile(name, photoURL)
-      .then(() => {navigate('/')})
+      .then(() => {
+        navigate('/');
+        const user = {
+          email: result.user.email
+        };
+        fetch('http://localhost:5000/jwt',{
+          method: "POST",
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+          localStorage.setItem('token', data.token);
+        })
+      })
       .catch(err => console.error(err))
-      console.log(user);
     })
     .catch(error => console.error(error))
   }

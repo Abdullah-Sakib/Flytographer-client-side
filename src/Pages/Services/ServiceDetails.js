@@ -24,13 +24,19 @@ const ServiceDetails = () => {
     const userImage = user.photoURL;
     const userEmail = user.email;
     const serviceId = _id;
+    const date = Date();
+    const split = date.split(' ');
+    const dateArray = [split[2], split[1], split[3], split[4]];
+    const reviewDate = dateArray.join(' ');
     const addReview = {
       review,
       userName,
       userImage,
       userEmail,
       serviceId,
+      reviewDate
     };
+
     fetch("http://localhost:5000/addReview", {
       method: "POST",
       headers: {
@@ -42,7 +48,7 @@ const ServiceDetails = () => {
       .then((data) => {
         event.target.reset();
         swal("Congratulations", "Review added successfully!", "success");
-        const addNewReview = [...allReviews, addReview];
+        const addNewReview = [ addReview, ...allReviews,];
         setAllReviews(addNewReview);
       });
   };
