@@ -4,21 +4,20 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 
 const Header = () => {
-  const {user, logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleSignOut = () => {
     logOut()
-    .then(() => {})
-    .catch(err => console.error(err));
-  }
+      .then(() => {})
+      .catch((err) => console.error(err));
+  };
   return (
-    <div className="white ">
+    <div className="white">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <Link
             to="/"
-            aria-label="Company"
-            title="Company"
+            title="Flytography"
             className="inline-flex items-center"
           >
             <BsCameraFill className="text-5xl "></BsCameraFill>
@@ -47,32 +46,31 @@ const Header = () => {
                 Blogs
               </Link>
             </li>
-            {
-              user?.uid && <li>
-              <Link
-                to="/myreviewes"
-                aria-label="Our product"
-                title="Our product"
-                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                My Reviewes
-              </Link>
-            </li>
-            }
-            {
-              user?.uid && <li>
-              <Link
-                to="/addservice"
-                aria-label="Product pricing"
-                title="Product pricing"
-                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Add Service
-              </Link>
-            </li>
-            }
-            {
-              user?.uid ? 
+            {user?.uid && (
+              <li>
+                <Link
+                  to="/myreviewes"
+                  aria-label="Our product"
+                  title="Our product"
+                  className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+                >
+                  My Reviewes
+                </Link>
+              </li>
+            )}
+            {user?.uid && (
+              <li>
+                <Link
+                  to="/addservice"
+                  aria-label="Product pricing"
+                  title="Product pricing"
+                  className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+                >
+                  Add Service
+                </Link>
+              </li>
+            )}
+            {user?.uid ? (
               <button
                 onClick={handleSignOut}
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none"
@@ -81,18 +79,18 @@ const Header = () => {
               >
                 Sign Out
               </button>
-              :
+            ) : (
               <li>
-              <Link
-                to="/register"
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none"
-                aria-label="Sign up"
-                title="Sign up"
-              >
-                Sign up
-              </Link>
-            </li>
-            }
+                <Link
+                  to="/register"
+                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none"
+                  aria-label="Sign up"
+                  title="Sign up"
+                >
+                  Sign up
+                </Link>
+              </li>
+            )}
           </ul>
           <div className="lg:hidden">
             <button
@@ -118,7 +116,7 @@ const Header = () => {
             </button>
             {isMenuOpen && (
               <div className="absolute top-0 left-0 w-full">
-                <div className="p-5 bg-white border rounded shadow-sm">
+                <div className="p-5  border rounded shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <Link
@@ -163,6 +161,16 @@ const Header = () => {
                       </li>
                       <li>
                         <Link
+                          to="/blogs"
+                          aria-label="Our product"
+                          title="Our product"
+                          className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+                        >
+                          Blogs
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
                           to="/"
                           aria-label="Our product"
                           title="Our product"
@@ -181,16 +189,27 @@ const Header = () => {
                           Add Service
                         </Link>
                       </li>
-                      <li>
-                        <Link
-                          to="/"
-                          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none"
+                      {user?.uid ? (
+                        <button
+                          onClick={handleSignOut}
+                          className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none"
                           aria-label="Sign up"
                           title="Sign up"
                         >
-                          Sign up
-                        </Link>
-                      </li>
+                          Sign Out
+                        </button>
+                      ) : (
+                        <li>
+                          <Link
+                            to="/register"
+                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none"
+                            aria-label="Sign up"
+                            title="Sign up"
+                          >
+                            Sign up
+                          </Link>
+                        </li>
+                      )}
                     </ul>
                   </nav>
                 </div>

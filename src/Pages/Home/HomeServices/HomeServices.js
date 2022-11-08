@@ -12,10 +12,10 @@ const HomeServices = () => {
   }, []);
   return (
     <div>
-      <h2 className="text-3xl text-start ml-8 mb-7 mt-16 font-semibold">
+      <h2 className="text-3xl text-start ml-8 mb-7 mt-16 font-bold">
         Photography services from Flytographer
       </h2>
-      <div className="grid grid-cols-3 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
 
         {
           services.map(service => <HomeServiceCart key={service._id} service={service}></HomeServiceCart>)
