@@ -28,6 +28,7 @@ const AddService = () => {
     .then(res => res.json())
     .then(data => {
       if(data.acknowledged){
+        form.reset();
         swal("Congratulations", "Service added successfully!", "success");
       }
     })

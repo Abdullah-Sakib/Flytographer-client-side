@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaArrowRight} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const HomeServices = () => {
+  useEffect(()=>{
+    fetch('http://localhost:5000/services?dataLimit=3')
+    .then(res => res.json())
+    .then(data => console.log(data))
+  },[])
   return (
     <div>
       <h2 className="text-3xl text-start ml-8 mb-7 mt-16 font-semibold">Photography services from Flytographer</h2>
