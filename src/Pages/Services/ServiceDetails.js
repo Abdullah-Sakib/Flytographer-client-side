@@ -87,7 +87,7 @@ const ServiceDetails = () => {
         <div className="grid grid-cols-1 md:grid-cols-12">
           <div className="md:col-span-8 ">
             <h2 className="text-2xl font-semibold ">All Reviews</h2>
-
+            {allReviews.length > 0 || <h2 className="text-lg font-semibold mt-14">No reviews found.</h2>}
             {allReviews.map((review) => (
               <ReviewCart key={review._id} reviews={review}></ReviewCart>
             ))}
@@ -113,7 +113,7 @@ const ServiceDetails = () => {
             ) : (
               <div>
                 <h2 className="text-3xl font-bold mb-5">
-                  Please login to add review
+                  Please login to add a review.
                 </h2>
                 <Link to="/login">
                   <button className="btn btn-warning text-white">Log in</button>
