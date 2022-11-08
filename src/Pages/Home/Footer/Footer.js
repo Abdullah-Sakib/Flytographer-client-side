@@ -6,23 +6,23 @@ const Footer = () => {
     <footer className="footer p-10 bg-white text-black mt-16 border-t-2">
     <div>
       <span className="footer-title">Services</span> 
-      <Link className="link link-hover">Branding</Link>
-      <Link className="link link-hover">Design</Link>
-      <Link className="link link-hover">Marketing</Link>
-      <Link className="link link-hover">Advertisement</Link>
+      <Link className="link link-hover">Printing</Link>
+      <Link className="link link-hover">Day-long service</Link>
+      <Link className="link link-hover">Download</Link>
+      <Link className="link link-hover">special Sevice</Link>
     </div> 
     <div>
-      <span className="footer-title">Company</span> 
-      <Link className="link link-hover">About us</Link>
+      <span className="footer-title">Flytographer</span> 
+      <Link className="link link-hover">About me</Link>
       <Link className="link link-hover">Contact</Link>
-      <Link className="link link-hover">Jobs</Link>
-      <Link className="link link-hover">Press kit</Link>
+      <Link className="link link-hover">Photos</Link>
+      <Link className="link link-hover">Life Style</Link>
     </div> 
     <div>
-      <span className="footer-title">Legal</span> 
-      <Link className="link link-hover">Terms of use</Link>
-      <Link className="link link-hover">Privacy policy</Link>
-      <Link className="link link-hover">Cookie policy</Link>
+      <span className="footer-title">Social Links</span> 
+      <Link className="link link-hover">Facebook</Link>
+      <Link className="link link-hover">Instagram</Link>
+      <Link className="link link-hover">Linkedin</Link>
     </div>
   </footer>
   );
