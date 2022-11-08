@@ -1,8 +1,16 @@
 import React from 'react';
+import { FcGoogle } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 
 const Registration = () => {
   const handleRegistration = event => {
     event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, photoURL, email, password);
   }
   return (
     <div className="hero min-h-screen">
@@ -62,6 +70,11 @@ const Registration = () => {
           <div className="form-control mt-6">
             <button type='submit' className="btn btn-warning text-white">Register</button>
           </div>
+          <p className="text-lg font-semibold my-2">Or</p>
+            <div className="form-control">
+              <button  className="btn btn-warning text-white flex"><FcGoogle className="text-3xl mr-2"></FcGoogle> <span className="flex-grow">Continue with Google</span></button>
+            </div>
+            <Link to='/login' className='font-semibold'>Already have an account?</Link>
         </form>
       </div>
     </div>
