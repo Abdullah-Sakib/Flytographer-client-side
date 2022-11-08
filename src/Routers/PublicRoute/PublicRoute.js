@@ -39,8 +39,9 @@ export const router = createBrowserRouter([
         element: <Registration></Registration>
       },
       {
-        path: 'serviceDetails',
-        element: <PrivetRoute><ServiceDetails></ServiceDetails></PrivetRoute>
+        path: 'serviceDetails/:id',
+        element: <PrivetRoute><ServiceDetails></ServiceDetails></PrivetRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/service/${params.id}`)
       }
     ]
   }

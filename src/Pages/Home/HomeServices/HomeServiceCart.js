@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HomeServiceCart = ({service}) => {
-  console.log(service);
   const {image, price, description, _id, name} = service;
   return (
     <div>
@@ -15,7 +14,7 @@ const HomeServiceCart = ({service}) => {
             <p className="text-start">{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
             <p className="text-start">${price}</p>
             <div className="card-actions justify-end">
-              <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
+              <Link to={`/serviceDetails/${_id}`}><button className="btn btn-warning text-white">Details</button></Link>
             </div>
           </div>
         </div>
