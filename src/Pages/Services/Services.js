@@ -1,88 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ServiceCart from './ServiceCart';
 
 const Services = () => {
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/services")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
   return (
     <div>
-      <div className="grid grid-cols-3 ">
-        <div className="card w-96 glass mx-auto">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="car!" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Graduation</h2>
-            <p className="text-start">Capture the best moments from your graduation with flytographer</p>
-            <p className="text-start">$129</p>
-            <div className="card-actions justify-end">
-              <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
-            </div>
-          </div>
-        </div>
-        <div className="card w-96 glass mx-auto">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="car!" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Graduation</h2>
-            <p className="text-start">Capture the best moments from your graduation with flytographer</p>
-            <p className="text-start">$129</p>
-            <div className="card-actions justify-end">
-              <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
-            </div>
-          </div>
-        </div>
-        <div className="card w-96 glass mx-auto">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="car!" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Graduation</h2>
-            <p className="text-start">Capture the best moments from your graduation with flytographer</p>
-            <p className="text-start">$129</p>
-            <div className="card-actions justify-end">
-              <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
-            </div>
-          </div>
-        </div>
-        <div className="card w-96 glass mx-auto">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="car!" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Graduation</h2>
-            <p className="text-start">Capture the best moments from your graduation with flytographer</p>
-            <p className="text-start">$129</p>
-            <div className="card-actions justify-end">
-              <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
-            </div>
-          </div>
-        </div>
-        <div className="card w-96 glass mx-auto">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="car!" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Graduation</h2>
-            <p className="text-start">Capture the best moments from your graduation with flytographer</p>
-            <p className="text-start">$129</p>
-            <div className="card-actions justify-end">
-              <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
-            </div>
-          </div>
-        </div>
-        <div className="card w-96 glass mx-auto">
-          <figure>
-            <img src="https://placeimg.com/400/225/arch" alt="car!" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Graduation</h2>
-            <p className="text-start">Capture the best moments from your graduation with flytographer</p>
-            <p className="text-start">$129</p>
-            <div className="card-actions justify-end">
-              <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
-            </div>
-          </div>
-        </div>
+      <div className="container mx-auto grid grid-cols-3 gap-10">
+        
+        {
+          services.map(service => <ServiceCart key={service._id} service={service}></ServiceCart>)
+        }
+    
       </div>
     </div>
   );

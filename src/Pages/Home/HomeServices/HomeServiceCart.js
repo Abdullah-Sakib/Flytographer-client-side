@@ -12,7 +12,7 @@ const HomeServiceCart = ({service}) => {
           <div className="card-body">
             <h2 className="card-title">{name}</h2>
             <p className="text-start">{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
-            <p className="text-start">${price}</p>
+            <p className="text-start text-warning font-semibold"><span className="text-black">Price:</span> ${price}</p>
             <div className="card-actions justify-end">
               <Link to={`/serviceDetails/${_id}`}><button className="btn btn-warning text-white">Details</button></Link>
             </div>

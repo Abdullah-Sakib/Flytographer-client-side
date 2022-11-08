@@ -37,6 +37,16 @@ const Header = () => {
                 Services
               </Link>
             </li>
+            <li>
+              <Link
+                to="/blogs"
+                aria-label="Our product"
+                title="Our product"
+                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
+              >
+                Blogs
+              </Link>
+            </li>
             {
               user?.uid && <li>
               <Link

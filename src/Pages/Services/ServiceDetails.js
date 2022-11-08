@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
-  const {image, price, description, _id, name} = service;
+  const {image, price, description, name} = service;
   console.log(service);
   return (
     <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
