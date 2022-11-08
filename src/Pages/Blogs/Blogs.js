@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import useTitle from "../../CustomHooks/useTitle";
 
 const Item = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  useTitle('Blogs')
   return (
     <div className="border rounded shadow-sm">
       <button

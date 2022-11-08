@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import useTitle from "../../CustomHooks/useTitle";
 
 const Login = () => {
   const {logIn, googleSignUp} = useContext(AuthContext);
@@ -27,6 +28,7 @@ const Login = () => {
     })
     .catch(error => console.error(error))
   }
+  useTitle('Login')
   return (
     <div className="hero min-h-screen">
       <div className="hero-content flex-col ">

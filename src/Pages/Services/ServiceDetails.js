@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import useTitle from "../../CustomHooks/useTitle";
 import ReviewCart from "./ReviewCart";
 
 const ServiceDetails = () => {
@@ -45,6 +46,8 @@ const ServiceDetails = () => {
         setAllReviews(addNewReview);
       });
   };
+
+  useTitle('Service Details')
 
   return (
     <div>

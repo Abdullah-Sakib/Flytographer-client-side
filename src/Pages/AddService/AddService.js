@@ -1,5 +1,6 @@
 import React from "react";
 import swal from 'sweetalert';
+import useTitle from "../../CustomHooks/useTitle";
 
 
 const AddService = () => {
@@ -32,8 +33,10 @@ const AddService = () => {
         swal("Congratulations", "Service added successfully!", "success");
       }
     })
-
   }
+
+  useTitle('AddService')
+
   return (
     <div>
       <h2 className="text-3xl font-semibold">Add New Service</h2>

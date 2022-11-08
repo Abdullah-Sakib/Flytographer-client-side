@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import swal from 'sweetalert';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import useTitle from '../../CustomHooks/useTitle';
 import MyReviewCart from './MyReviewCart';
 
 const MyReviewes = () => {
   const {user} = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
-  
+
   useEffect(() => {
     fetch(`http://localhost:5000/userReviews?email=${user?.email}`)
     .then(res => res.json())
@@ -30,6 +31,8 @@ const MyReviewes = () => {
       }
     })
   }
+
+  useTitle('MyReviews')
 
   return (
     <div>
