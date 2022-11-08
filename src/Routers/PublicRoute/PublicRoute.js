@@ -5,7 +5,9 @@ import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import MyReviewes from "../../Pages/MyReviewes/MyReviewes";
 import Registration from "../../Pages/Registration/Registration";
+import ServiceDetails from "../../Pages/Services/ServiceDetails";
 import Services from "../../Pages/Services/Services";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
 export const router = createBrowserRouter([
   {
@@ -22,11 +24,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'myreviewes',
-        element: <MyReviewes></MyReviewes>
+        element: <PrivetRoute><MyReviewes></MyReviewes></PrivetRoute>
       },
       {
         path: 'addservice',
-        element: <AddService></AddService>
+        element: <PrivetRoute><AddService></AddService></PrivetRoute>
       },
       {
         path: 'login',
@@ -35,6 +37,10 @@ export const router = createBrowserRouter([
       {
         path: 'register',
         element: <Registration></Registration>
+      },
+      {
+        path: 'serviceDetails',
+        element: <PrivetRoute><ServiceDetails></ServiceDetails></PrivetRoute>
       }
     ]
   }

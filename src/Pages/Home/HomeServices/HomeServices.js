@@ -16,7 +16,7 @@ const HomeServices = () => {
             <p className="text-start">Capture the best moments from your graduation with flytographer</p>
             <p className="text-start">$129</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-warning text-white">Details</button>
+              <Link to='/serviceDetails'><button className="btn btn-warning text-white">Details</button></Link>
             </div>
           </div>
         </div>
