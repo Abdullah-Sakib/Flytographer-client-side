@@ -24,7 +24,7 @@ const Banner = () => {
               <h2 className="max-w-lg mb-6 font-thin text-warning text-3xl  tracking-tight  sm:text-4xl sm:leading-none" style={{fontFamily: 'Berkshire Swash'}}>
                 Capture every precious moment with flytographer
               </h2>
-              <p className="max-w-xl mb-4  text-base text-base-100 md:text-lg" style={{fontFamily: 'Berkshire Swash'}}>
+              <p className="max-w-xl mb-4  text-base textblack md:text-lg" style={{fontFamily: 'Berkshire Swash'}}>
                 Only photography has been able to divide human life into a
                 series of moments, each of them has the value of a complete
                 existence.
