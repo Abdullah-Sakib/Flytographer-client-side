@@ -74,7 +74,7 @@ const Registration = () => {
       <div className="hero ">
         <div className="hero-content flex-col ">
           <div className="card my-5 lg:my-10 flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body w-96" onSubmit={handleRegistration}>
+            <form className="card-body md:w-96" onSubmit={handleRegistration}>
               <h1 className="text-3xl font-bold">Registration</h1>
               <div className="form-control">
                 <label className="label">
