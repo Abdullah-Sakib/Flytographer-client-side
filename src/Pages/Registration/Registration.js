@@ -45,6 +45,20 @@ const Registration = () => {
     googleSignUp()
       .then((result) => {
         navigate("/");
+        const user = {
+          email: result.user.email,
+        };
+        fetch("https://flytographer-server.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("token", data.token);
+          });
       })
       .catch((error) => console.error(error));
   };
