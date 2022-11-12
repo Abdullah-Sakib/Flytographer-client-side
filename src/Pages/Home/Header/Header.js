@@ -115,7 +115,7 @@ const Header = () => {
               </svg>
             </button>
             {isMenuOpen && (
-              <div className="absolute top-0 left-0 w-full">
+              <div className="absolute z-10 top-0 left-0 w-full">
                 <div className="p-5 bg-white border rounded shadow-sm">
                   <div className="flex items-center justify-between mb-4">
                     <div>
@@ -171,7 +171,7 @@ const Header = () => {
                       </li>
                       <li>
                         <Link
-                          to="/"
+                          to="/myreviewes"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
@@ -181,7 +181,7 @@ const Header = () => {
                       </li>
                       <li>
                         <Link
-                          to="/"
+                          to="/addservice"
                           aria-label="Product pricing"
                           title="Product pricing"
                           className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400"
