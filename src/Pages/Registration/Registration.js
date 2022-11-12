@@ -139,7 +139,7 @@ const Registration = () => {
                   <span className="flex-grow">Continue with Google</span>
                 </button>
               </div>
-              <Link to="/login" className="font-semibold">
+              <Link to="/login" className="font-semibold mt-4">
                 Already have an account?
               </Link>
             </form>

@@ -117,7 +117,7 @@ const Login = () => {
                   <span className="flex-grow">Continue with Google</span>
                 </button>
               </div>
-              <Link to="/register" className="font-semibold">
+              <Link to="/register" className="font-semibold mt-4">
                 Don't have an account?{" "}
               </Link>
             </form>
