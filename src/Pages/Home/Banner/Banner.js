@@ -5,7 +5,7 @@ const Banner = () => {
     //banner
     <div className="relative">
       <img
-        src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=995&q=80"
+        src="https://images.unsplash.com/photo-1503314885798-a70f8f9028d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
         className="absolute inset-0 object-cover w-full h-full "
         alt=""
       />
@@ -21,11 +21,11 @@ const Banner = () => {
         </svg>
         <div className="relative h-[70vh] md:h-[90vh] px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex justify-center items-center h-full">
-            <div className="w-full  mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
-              <h2 className="max-w-lg mb-6 font-thin text-warning text-3xl  tracking-tight  sm:text-4xl sm:leading-none" style={{fontFamily: 'Berkshire Swash'}}>
+            <div className="w-full  mb-12 xl:mb-0 xl:w-7/12">
+              <h2 className="max-w-xl mb-6 font-thin text-base-200 text-3xl  tracking-tight sm:text-5xl sm:leading-none mr-0" style={{fontFamily: 'Berkshire Swash'}}>
                 Capture every precious moment with flytographer
               </h2>
-              <p className="max-w-xl mb-4 text-black md:text-lg" style={{fontFamily: 'Berkshire Swash'}}>
+              <p className="max-w-xl mr-0 mb-4 text-white md:text-xl" style={{fontFamily: 'Berkshire Swash'}}>
                 Only photography has been able to divide human life into a
                 series of moments, each of them has the value of a complete
                 existence.
