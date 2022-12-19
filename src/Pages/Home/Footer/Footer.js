@@ -1,30 +1,32 @@
 import { Link } from "react-router-dom";
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-white text-black mt-16 border-t-2">
-    <div>
-      <span className="footer-title">Services</span> 
-      <Link className="link link-hover">Printing</Link>
-      <Link className="link link-hover">Day-long service</Link>
-      <Link className="link link-hover">Download</Link>
-      <Link className="link link-hover">special Sevice</Link>
-    </div> 
-    <div>
-      <span className="footer-title">Flytographer</span> 
-      <Link className="link link-hover">About me</Link>
-      <Link className="link link-hover">Contact</Link>
-      <Link className="link link-hover">Photos</Link>
-      <Link className="link link-hover">Life Style</Link>
-    </div> 
-    <div>
-      <span className="footer-title">Social Links</span> 
-      <Link className="link link-hover">Facebook</Link>
-      <Link className="link link-hover">Instagram</Link>
-      <Link className="link link-hover">Linkedin</Link>
+    <div className="border-t-[3px] mt-16">
+      <footer className="footer p-5 bg-white text-black  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 py-10">
+        <div>
+          <span className="footer-title text-xl">Services</span>
+          <Link className="link link-hover text-lg">Printing</Link>
+          <Link className="link link-hover text-lg">Day-long service</Link>
+          <Link className="link link-hover text-lg">Download</Link>
+          <Link className="link link-hover text-lg">special Sevice</Link>
+        </div>
+        <div>
+          <span className="footer-title text-xl">Flytographer</span>
+          <Link className="link link-hover text-lg">About me</Link>
+          <Link className="link link-hover text-lg">Contact</Link>
+          <Link className="link link-hover text-lg">Photos</Link>
+          <Link className="link link-hover text-lg">Life Style</Link>
+        </div>
+        <div>
+          <span className="footer-title text-xl">Social Links</span>
+          <Link className="link link-hover text-lg">Facebook</Link>
+          <Link className="link link-hover text-lg">Instagram</Link>
+          <Link className="link link-hover text-lg">Linkedin</Link>
+        </div>
+      </footer>
     </div>
-  </footer>
   );
 };
 

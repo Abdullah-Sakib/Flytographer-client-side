@@ -72,68 +72,68 @@ const Registration = () => {
         <button className="btn btn-warning btn-circle loading text-white "></button>
       )}
       <div className="hero ">
-        <div className="hero-content flex-col ">
-          <div className="card my-5 lg:my-10 flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body md:w-96" onSubmit={handleRegistration}>
+        <div className="hero-content w-full flex-col ">
+          <div className="card my-5 lg:my-10 flex-shrink-0 w-full lg:w-2/4 md:shadow-2xl bg-base-200 md:bg-base-100">
+            <form className="card-body text-lg px-5 md:px-8" onSubmit={handleRegistration}>
               <h1 className="text-3xl font-bold">Registration</h1>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text text-lg">Name</span>
                 </label>
                 <input
                   type="text"
                   name="name"
                   placeholder="name"
-                  className="input input-bordered"
+                  className="input input-bordered text-lg"
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">PhotoURL</span>
+                  <span className="label-text text-lg">PhotoURL</span>
                 </label>
                 <input
                   type="text"
                   name="photoURL"
                   placeholder="photoURL"
-                  className="input input-bordered"
+                  className="input input-bordered text-lg"
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text text-lg">Email</span>
                 </label>
                 <input
                   type="email"
                   placeholder="email"
                   name="email"
-                  className="input input-bordered"
+                  className="input input-bordered text-lg"
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text text-lg">Password</span>
                 </label>
                 <input
                   type="password"
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered text-lg"
                   required
                 />
               </div>
               <div className="form-control mt-6">
-                <button type="submit" className="btn btn-warning text-white">
+                <button type="submit" className="btn btn-warning text-white text-base">
                   Register
                 </button>
               </div>
-              <p className="text-lg font-semibold my-2">Or</p>
+              <p className="text-xl font-semibold my-2">Or</p>
               <div className="form-control">
                 <button
                   onClick={handleGoogleSignIn}
-                  className="btn btn-warning text-white flex"
+                  className="btn btn-warning text-white flex text-base"
                 >
                   <FcGoogle className="text-3xl mr-2"></FcGoogle>{" "}
                   <span className="flex-grow">Continue with Google</span>
