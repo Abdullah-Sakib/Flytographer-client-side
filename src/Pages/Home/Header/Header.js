@@ -17,7 +17,7 @@ const Header = () => {
         <div className="relative flex items-center justify-between">
           <Link to="/" title="Flytography" className="inline-flex items-center">
             <BsCameraFill className="text-5xl "></BsCameraFill>
-            <span className="ml-2 text-3xl font-bold tracking-wide text-black uppercase">
+            <span className="ml-2 text-2xl sm:text-3xl font-bold tracking-wide text-black uppercase">
               Flytographer
             </span>
           </Link>

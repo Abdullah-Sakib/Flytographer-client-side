@@ -17,7 +17,7 @@ const HomeServices = () => {
         <MdMiscellaneousServices className="mr-4 text-6xl text-indigo-300 inline"></MdMiscellaneousServices>
         <span>Services from Flytographer</span>
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-0 mx-auto ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 mx-auto ">
         {services.map((service) => (
           <HomeServiceCart
             key={service._id}
