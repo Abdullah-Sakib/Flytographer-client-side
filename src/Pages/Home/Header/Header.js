@@ -13,11 +13,11 @@ const Header = () => {
   };
   return (
     <div className="white">
-      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8">
+      <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8">
         <div className="relative flex items-center justify-between">
           <Link to="/" title="Flytography" className="inline-flex items-center">
             <BsCameraFill className="text-5xl "></BsCameraFill>
-            <span className="ml-2 text-2xl sm:text-3xl font-bold tracking-wide text-black uppercase">
+            <span className="ml-2 text-2xl sm:text-2xl font-bold tracking-wide text-black uppercase">
               Flytographer
             </span>
           </Link>
@@ -27,7 +27,7 @@ const Header = () => {
                 to="/services"
                 aria-label="Our product"
                 title="Our product"
-                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-xl"
+                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-base"
               >
                 Services
               </Link>
@@ -37,7 +37,7 @@ const Header = () => {
                 to="/blogs"
                 aria-label="Our product"
                 title="Our product"
-                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-xl"
+                className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-base"
               >
                 Blogs
               </Link>
@@ -48,7 +48,7 @@ const Header = () => {
                   to="/myreviewes"
                   aria-label="Our product"
                   title="Our product"
-                  className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-xl"
+                  className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-base"
                 >
                   My Reviewes
                 </Link>
@@ -60,7 +60,7 @@ const Header = () => {
                   to="/addservice"
                   aria-label="Product pricing"
                   title="Product pricing"
-                  className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-xl"
+                  className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-base"
                 >
                   Add Service
                 </Link>
@@ -69,7 +69,7 @@ const Header = () => {
             {user?.uid ? (
               <button
                 onClick={handleSignOut}
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-xl"
+                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-base"
               >
                 Sign Out
               </button>
@@ -77,7 +77,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/register"
-                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-xl"
+                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-base"
                   aria-label="Sign up"
                   title="Sign up"
                 >
@@ -118,7 +118,7 @@ const Header = () => {
                         className="inline-flex items-center"
                       >
                         <BsCameraFill className="text-4xl"></BsCameraFill>
-                        <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+                        <span className="ml-2 text-base font-bold tracking-wide text-gray-800 uppercase">
                           Flytographer
                         </span>
                       </Link>
@@ -146,7 +146,7 @@ const Header = () => {
                           to="/services"
                           aria-label="Our product"
                           title="Our product"
-                          className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-xl"
+                          className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-base"
                         >
                           Services
                         </Link>
@@ -156,7 +156,7 @@ const Header = () => {
                           to="/blogs"
                           aria-label="Our product"
                           title="Our product"
-                          className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-xl"
+                          className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-base"
                         >
                           Blogs
                         </Link>
@@ -167,7 +167,7 @@ const Header = () => {
                             to="/myreviewes"
                             aria-label="Our product"
                             title="Our product"
-                            className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-xl"
+                            className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-base"
                           >
                             My Reviewes
                           </Link>
@@ -179,7 +179,7 @@ const Header = () => {
                             to="/addservice"
                             aria-label="Product pricing"
                             title="Product pricing"
-                            className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-xl"
+                            className="font-medium tracking-wide text-black transition-colors duration-200 hover:text-teal-accent-400 text-base"
                           >
                             Add Service
                           </Link>
@@ -188,7 +188,7 @@ const Header = () => {
                       {user?.uid ? (
                         <button
                           onClick={handleSignOut}
-                          className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-xl"
+                          className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-base"
                           aria-label="Sign up"
                           title="Sign up"
                         >
@@ -198,7 +198,7 @@ const Header = () => {
                         <li>
                           <Link
                             to="/register"
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-xl"
+                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-warning hover:bg-yellow-500 focus:shadow-outline focus:outline-none text-base"
                           >
                             Sign up
                           </Link>

@@ -61,7 +61,7 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <p className="mb-2 text-xl font-bold">Book</p>
-              <p className="text-lg leading-5 text-gray-900 ">
+              <p className="text-base leading-5 text-gray-900 ">
               Tell us where, when, and what's the occasion. We'll assign the best photographer that matches your needs.
               </p>
             </div>
@@ -85,7 +85,7 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <p className="mb-2 text-xl font-bold">Plan</p>
-              <p className="text-lg leading-5 text-gray-900">
+              <p className="text-base leading-5 text-gray-900">
               Your photographer is ready to discuss and plan the shoot with you through our app's chat system.
               </p>
             </div>
@@ -109,7 +109,7 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <p className="mb-2 text-xl font-bold">Shoot</p>
-              <p className="text-lg leading-5 text-gray-900">
+              <p className="text-base leading-5 text-gray-900">
               Your photographer will arrive on time with their pro-equipment to capture your moments and deliver a great time.
               </p>
             </div>
@@ -133,7 +133,7 @@ const HowItWorks = () => {
                 </svg>
               </div>
               <p className="mb-2 text-xl font-bold">Download</p>
-              <p className="text-lg leading-5 text-gray-900">
+              <p className="text-base leading-5 text-gray-900">
               Our editors will enhance your photos and you can download them directly to your devices in 48 hours after your session.
               </p>
             </div>

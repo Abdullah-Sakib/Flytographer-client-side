@@ -26,7 +26,7 @@ const HomeServices = () => {
         ))}
       </div>
       <Link to="/services">
-        <button className="btn btn-warning my-10 text-white text-lg hover:bg-yellow-500">
+        <button className="btn btn-warning my-10 text-white hover:bg-yellow-500">
           SEE ALL <FaArrowRight className="ml-2"></FaArrowRight>{" "}
         </button>
       </Link>

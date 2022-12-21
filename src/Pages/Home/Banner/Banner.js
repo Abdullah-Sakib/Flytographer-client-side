@@ -20,15 +20,15 @@ const Banner = () => {
         </svg>
         <div className="relative h-[70vh] md:h-[90vh] px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex justify-center items-center h-full">
-            <div className="w-full  mb-12 xl:mb-0 xl:w-7/12">
+            <div className="w-full mb-12 lg:mb-0 lg:w-7/12">
               <h2
-                className="max-w-xl mb-6 font-thin text-base-200 text-3xl  tracking-tight sm:text-5xl sm:leading-none mr-0"
+                className="max-w-xl mx-auto mb-6 font-thin text-base-200 text-3xl  tracking-tight sm:text-5xl sm:leading-none "
                 style={{ fontFamily: "Berkshire Swash" }}
               >
                 Capture every precious moment with flytographer
               </h2>
               <p
-                className="max-w-xl mr-0 mb-4 text-white md:text-xl"
+                className="max-w-xl mx-auto mb-4 text-white md:text-xl"
                 style={{ fontFamily: "Berkshire Swash" }}
               >
                 Only photography has been able to divide human life into a
