@@ -64,14 +64,14 @@ const ServiceDetails = () => {
           <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
             <div className="max-w-xl mb-6">
               <div>
-                <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+                <p className="inline-block px-3 py-px mb-4 text-lg font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
                   Flytographer
                 </p>
               </div>
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
                 {name}
               </h2>
-              <p className="text-base text-gray-700 md:text-lg">
+              <p className="text-base text-gray-700 md:text-xl">
                 {description}
               </p>
             </div>
@@ -110,7 +110,7 @@ const ServiceDetails = () => {
                   Add Review
                 </h2>
                 <textarea
-                  className="textarea textarea-bordered w-full h-40"
+                  className="textarea textarea-bordered w-full text-xl h-40"
                   placeholder="write your review here"
                   name="review"
                   required

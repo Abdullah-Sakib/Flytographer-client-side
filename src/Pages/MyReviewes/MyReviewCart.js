@@ -8,7 +8,7 @@ const MyReviewCart = ({ reviews, handleReviewDelete }) => {
     <div className="grid grid-cols-12 my-5 border shadow-lg w-11/12 md:w-4/5 mx-auto rounded-lg py-4 px-4 md:p-8">
       <div className="col-span-12 md:col-span-3 ">
         <div className="avatar">
-          <div className="w-14 md:w-20 rounded-full">
+          <div className="w-20 md:w-28 rounded-full">
             <img src={userImage} alt="" />
           </div>
         </div>
@@ -20,10 +20,10 @@ const MyReviewCart = ({ reviews, handleReviewDelete }) => {
         <p className="text-lg font-semibold text-gray-600">{review}</p>
       </div>
 
-      <div className="col-span-12 md:col-span-3 text-start flex items-center justify-evenly">
+      <div className="col-span-12 lg:col-span-3 text-start flex items-center justify-evenly">
         <button
           onClick={() => handleReviewDelete(_id)}
-          className="btn btn-error text-white"
+          className="btn btn-error text-white "
         >
           Delete
         </button>

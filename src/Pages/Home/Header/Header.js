@@ -13,7 +13,7 @@ const Header = () => {
   };
   return (
     <div className="white">
-      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
+      <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8">
         <div className="relative flex items-center justify-between">
           <Link to="/" title="Flytography" className="inline-flex items-center">
             <BsCameraFill className="text-5xl "></BsCameraFill>

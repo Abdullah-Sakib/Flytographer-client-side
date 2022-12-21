@@ -13,21 +13,25 @@ const Services = () => {
         setLoading(false);
       });
   }, [setLoading]);
-  useTitle("Services")
+  useTitle("Services");
   return (
     <div>
-
       {loading && (
-        <button className="btn btn-warning btn-circle loading text-white "></button>
+        <div className="min-h-[80vh] flex justify-center items-center">
+        <div
+          className="spinner-border border-dashed animate-spin inline-block w-12 h-12 border-4 rounded-full border-warning"
+          role="status"
+        ></div>
+      </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 mx-auto">
         {services.map((service) => (
           <ServiceCart key={service._id} service={service}></ServiceCart>
         ))}
       </div>
     </div>
   );
-}; 
+};
 
 export default Services;
